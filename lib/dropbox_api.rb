@@ -6,6 +6,7 @@ require 'json'
 require 'faraday'
 
 require 'dropbox_api/authenticator'
+require 'dropbox_api/oauth_token'
 
 require 'dropbox_api/metadata/base'
 require 'dropbox_api/metadata/field'
