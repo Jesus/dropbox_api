@@ -65,6 +65,7 @@ require 'dropbox_api/metadata/commit_info'
 require 'dropbox_api/metadata/thumbnail_batch_result_entry'
 require 'dropbox_api/metadata/thumbnail_batch_result_data'
 require 'dropbox_api/metadata/file_request'
+require 'dropbox_api/metadata/import_format'
 
 require 'dropbox_api/errors/http_error'
 require 'dropbox_api/errors/basic_error'

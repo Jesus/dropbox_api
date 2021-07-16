@@ -14,8 +14,7 @@ module DropboxApi::Endpoints::Files
       ], options)
 
       options[:path] = path
-      commit_info = DropboxApi::Metadata::CommitInfo.build_from_options options
-      perform_request(commit_info.to_hash, content)
+      perform_request(options, content)
     end
   end
 end
