@@ -15,7 +15,6 @@ module DropboxApi::Endpoints
     end
 
     def perform_request(params, content)
-      pp params
       process_response(get_response(params, content))
     end
 
