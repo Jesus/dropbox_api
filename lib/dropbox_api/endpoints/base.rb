@@ -43,10 +43,19 @@ module DropboxApi::Endpoints
           raw_response.env[:api_result]['error']
         )
       when 429
-        error = DropboxApi::Errors::TooManyRequestsError.build(
-          raw_response.env[:api_result]['error_summary'],
-          raw_response.env[:api_result]['error']['reason']
-        )
+        # now while uploading a file dropbox returns 429 error code with none application/json content-type
+        # so raw_response.env[:api_result] is nil
+        error = if raw_response.env[:api_result]
+                  DropboxApi::Errors::TooManyRequestsError.build(
+                    raw_response.env[:api_result]['error_summary'],
+                    raw_response.env[:api_result]['error']['reason']
+                  )
+                else
+                  DropboxApi::Errors::TooManyRequestsError.build(
+                    'Too many requests.',
+                    { '.tag' => 'too_many_write_operations' }
+                  )
+                end
 
         error.retry_after = raw_response.headers['retry-after'].to_i
 

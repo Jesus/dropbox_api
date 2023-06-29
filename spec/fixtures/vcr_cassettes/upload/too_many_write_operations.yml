@@ -316,7 +316,7 @@ http_interactions:
       Date:
       - Fri, 31 May 2019 21:25:32 GMT
       Content-Type:
-      - application/json
+      - text/javascript
       Transfer-Encoding:
       - chunked
       Connection:
@@ -331,8 +331,7 @@ http_interactions:
       - noindex, nofollow, noimageindex
     body:
       encoding: UTF-8
-      string: '{"error_summary": "too_many_write_operations/", "error": {"reason":
-        {".tag": "too_many_write_operations"}}}'
+      string: 'text'
     http_version: 
   recorded_at: Fri, 31 May 2019 21:25:32 GMT
 - request:
